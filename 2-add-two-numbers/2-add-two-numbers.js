@@ -17,6 +17,7 @@ var addTwoNumbers = function(l1, l2) {
     while(l1 || l2 || carry){
         let l1Val = 0;
         let l2Val = 0;
+        //if there is a node set that val to corresponding variable. then move to next node
         if(l1){
             l1Val = l1.val;
             l1 = l1.next;
@@ -25,9 +26,12 @@ var addTwoNumbers = function(l1, l2) {
             l2Val = l2.val;
             l2 = l2.next;
         }
+        //add values and carry variable
         const sum = l1Val + l2Val + carry;
+        // carry variable used for digits that are greater than 9 to carry over values
         carry = sum > 9? 1 : 0;
         const singleDigit = sum%10;
+        //new node to store singledigit / value
         const currentNode = new ListNode(singleDigit);
         prevNode.next = currentNode;
         prevNode = currentNode;
