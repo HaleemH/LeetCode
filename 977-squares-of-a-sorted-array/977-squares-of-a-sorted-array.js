@@ -9,7 +9,7 @@ var sortedSquares = function(nums) {
     */
     const squared = [];
     for (let i = 0; i < nums.length; i++){
-        squared.push(nums[i]*nums[i])
+        squared.push(nums[i]**2)
     }
     return squared.sort((a,b) => {
         if(a < b){
